@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="runner.testRunner" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-23T09:05:49" hostname="PKSLP-22-000993.local" time="6.181">
+  <properties/>
+  <testcase name="Login using valid email and password" classname="runner.testRunner" time="3.223"/>
+  <testcase name="Login using invalid email and password" classname="runner.testRunner" time="2.957"/>
+  <system-out><![CDATA[Before All
+
+@valid-login
+Scenario: Login using valid email and password # src/test/java/features/web.feature:4
+Before Test
+  Given user is on login page                  # stepDef.WebStep.userIsOnLoginPage()
+  And user input username with "standard_user" # stepDef.WebStep.userInputUsernameWith(java.lang.String)
+  And user input password with "secret_sauce"  # stepDef.WebStep.userInputPasswordWith(java.lang.String)
+  When user click login button                 # stepDef.WebStep.userClickLoginButton()
+  Then user is on homepage                     # stepDef.WebStep.userIsOnHomepage()
+After Test
+
+@invalid-login
+Scenario: Login using invalid email and password # src/test/java/features/web.feature:12
+Before Test
+  Given user is on login page                    # stepDef.WebStep.userIsOnLoginPage()
+  And user input username with ""                # stepDef.WebStep.userInputUsernameWith(java.lang.String)
+  And user input password with ""                # stepDef.WebStep.userInputPasswordWith(java.lang.String)
+  When user click login button                   # stepDef.WebStep.userClickLoginButton()
+  Then user is on login page                     # stepDef.WebStep.userIsOnLoginPage()
+  And user see error massage                     # stepDef.WebStep.userSeeErrorMassage()
+After Test
+After All
+]]></system-out>
+  <system-err><![CDATA[Apr 23, 2024 4:05:50 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 124, returning the closest version; found: 121; Please update to a Selenium version that supports CDP version 124
+Apr 23, 2024 4:05:53 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 124, returning the closest version; found: 121; Please update to a Selenium version that supports CDP version 124
+]]></system-err>
+</testsuite>
