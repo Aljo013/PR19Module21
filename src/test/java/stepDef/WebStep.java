@@ -1,28 +1,14 @@
-package StepDef;
+package stepDef;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 
+import static helper.Utility.driver;
 
-public class LoginStep {
-
-    WebDriver driver;
-
-    @Before
-    public void beforeTest(){
-        driver = WebDriverManager.chromiumdriver().create();
-    }
-
-    @After
-    public void afterTest(){
-        System.out.println("After");
-    }
+public class WebStep {
 
     @Then("user is on homepage")
     public void userIsOnHomepage() {
@@ -32,6 +18,7 @@ public class LoginStep {
     public void userIsOnLoginPage() {
         driver.get("https://www.saucedemo.com/");
     }
+
 
     @And("user input username with {string}")
     public void userInputUsernameWith(String username) {

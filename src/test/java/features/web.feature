@@ -1,7 +1,5 @@
-@Login
-Feature: Login
+Feature: Test Automation Web
 
-  @valid-login
   Scenario: Login using valid email and password
     Given user is on login page
     And user input username with "standard_user"
@@ -9,7 +7,6 @@ Feature: Login
     When user click login button
     Then user is on homepage
 
-  @invalid-login
   Scenario: Login using invalid email and password
     Given user is on login page
     And user input username with ""
